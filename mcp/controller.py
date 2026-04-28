@@ -4,6 +4,15 @@ import json
 
 
 def get_tool(name):
+    """
+    Retrieves a tool function from the registry by its name.
+    
+    Args:
+        name (str): The name of the tool to find.
+        
+    Returns:
+        callable or None: The function associated with the tool name.
+    """
     for t in TOOLS:
         if t["name"] == name:
             return t["function"]
@@ -11,6 +20,16 @@ def get_tool(name):
 
 
 def mcp_handle(query):
+    """
+    The main controller for handling user queries using the MCP architecture.
+    It follows a fixed workflow: Retrieval -> Intent Classification -> Tool Execution.
+    
+    Args:
+        query (str): The user's input question or command.
+        
+    Returns:
+        str: The AI's response or tool output.
+    """
 
     # 🔥 ALWAYS start with retrieval
     search_fn = get_tool("search_notes")
