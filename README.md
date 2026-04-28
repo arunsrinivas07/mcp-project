@@ -1,5 +1,7 @@
 # 🎓 MCP Study Assistant
 
+![Architecture Diagram](assets/architecture.png)
+
 
 An intelligent, AI-powered study platform built on the **Model Context Protocol (MCP)** architecture. Transform your PDFs into interactive learning materials, generate quizzes, and get instant summaries via a sleek, modern dashboard or Telegram.
 
