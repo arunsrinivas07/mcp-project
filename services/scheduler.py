@@ -1,8 +1,12 @@
+import os
+from dotenv import load_dotenv
 from core.database import cursor, conn
 from core.llm import ask_llm
 
+load_dotenv()
+
 async def send_daily(context):
-    chat_id = 6644308148
+    chat_id = os.getenv("TELEGRAM_CHAT_ID")
 
     cursor.execute("SELECT id, content FROM topics WHERE used=0 LIMIT 1")
     row = cursor.fetchone()

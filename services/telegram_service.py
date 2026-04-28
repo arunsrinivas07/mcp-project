@@ -1,13 +1,16 @@
+import os
 import asyncio
 import schedule
 import time
+from dotenv import load_dotenv
 from telegram import Bot
 
 from core.database import cursor, conn
 from core.llm import ask_llm
 
-BOT_TOKEN = "8516024664:AAGYqNyyFnSkUixfSlyG-QBMSCebK9jCLQg"
-CHAT_ID = 6644308148
+load_dotenv()
+BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
 
 bot = Bot(token=BOT_TOKEN)
 
