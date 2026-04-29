@@ -31,7 +31,7 @@ def mcp_handle(query):
         str: The AI's response or tool output.
     """
 
-    # 🔥 ALWAYS start with retrieval
+    #  ALWAYS start with retrieval
     search_fn = get_tool("search_notes")
     summarize_fn = get_tool("summarize")
     quiz_fn = get_tool("generate_quiz")
@@ -62,7 +62,7 @@ def mcp_handle(query):
 
     intent = decision.choices[0].message.content.lower().strip()
 
-    # 🔥 STEP 3 → EXECUTE TOOL (NO MCP CHAOS)
+    #  STEP 3 → EXECUTE TOOL (NO MCP CHAOS)
     if "quiz" in intent:
         return quiz_fn(content)
 

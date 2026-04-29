@@ -1,5 +1,4 @@
 pymupdf
-pdf2image
 pytesseract
 opencv-python
 faiss-cpu
@@ -11,3 +10,4 @@ apscheduler
 flask
 flask-cors
 python-dotenv
+bcrypt
